@@ -24,7 +24,8 @@ Add this command to your keymappings:
 ```json
   {
     "key": "cmd+c", // or Ctrl-C or other keymap that you find useful
-    "command": "highlightOnCopy.run"
+    "command": "highlightOnCopy.run",
+    "when": "editorTextFocus && highlightOnCopy.init"
   }
 ```
 
@@ -33,6 +34,8 @@ You can customize the color and the duration of the highlight with these entries
 ```json
 {
     "highlight-on-copy.backgroundColor": "rgba(230, 97, 89, 0.7)",
+    // by default the foreground text color it's undefined, meaning the actual color won't be modified
+    "highlight-on-copy.foregroundColor": undefined, // set it to #fff if you want to
     "highlight-on-copy.timeout": 500
 }
 ```

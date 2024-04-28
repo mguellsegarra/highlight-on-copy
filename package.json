@@ -2,12 +2,18 @@
   "name": "highlight-on-copy",
   "displayName": "Highlight on Copy",
   "description": "Briefly flash and highlight selected copied text",
-  "publisher": "Marc Güell Segarra",
   "version": "0.0.1",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.88.0"
   },
+  "tags": [
+    "copy",
+    "yank",
+    "highlight",
+    "clipboard",
+    "flash"
+  ],
   "categories": [
     "Keymaps",
     "Other",
@@ -18,10 +24,12 @@
   },
   "author": {
     "name": "Marc Güell Segarra",
-    "url": "https://ondori.dev",
-    "email": "marc@ondori.dev"
+    "url": "https://ondori.dev"
   },
-  "activationEvents": [],
+  "license": "MIT",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -33,10 +41,14 @@
     "configuration": {
       "type": "object",
       "properties": {
+        "foregroundColor": {
+          "type": "string",
+          "description": "Foreground color for highlighting selected copied text"
+        },
         "backgroundColor": {
           "type": "string",
           "default": "rgba(230, 97, 89, 0.7)",
-          "description": "Background color for highlighting"
+          "description": "Background color for highlighting selected copied text"
         },
         "timeout": {
           "type": "number",
