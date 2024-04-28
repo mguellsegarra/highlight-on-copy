@@ -33,10 +33,10 @@ You can customize the color and the duration of the highlight with these entries
 
 ```json
 {
-    "highlight-on-copy.backgroundColor": "rgba(230, 97, 89, 0.7)",
+    "highlightOnCopy.backgroundColor": "rgba(230, 97, 89, 0.7)",
     // by default the foreground text color it's undefined, meaning the actual color won't be modified
-    "highlight-on-copy.foregroundColor": undefined, // set it to #fff if you want to
-    "highlight-on-copy.timeout": 500
+    "highlightOnCopy.foregroundColor": undefined, // set it to #fff if you want to
+    "highlightOnCopy.timeout": 500
 }
 ```
 
