@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
       const selection = editor.selection;
       const text = editor.document.getText(selection);
 
-      const config = vscode.workspace.getConfiguration();
+      const config = vscode.workspace.getConfiguration("highlightOnCopy");
 
       // Retrieve settings with automatic fallback to defaults defined in package.json
       const foregroundColor = config.get("foregroundColor");
