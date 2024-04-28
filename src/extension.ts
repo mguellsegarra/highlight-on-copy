@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
 
-const DEFAULT_COLOR = "rgba(230, 97, 89, 0.7)";
-const DEFAULT_TIMEOUT = 500;
-
 export function activate(context: vscode.ExtensionContext) {
+  // Set the init flag in the context
+  vscode.commands.executeCommand("setContext", "highlightOnCopy.init", true);
+
   let disposable = vscode.commands.registerCommand(
     "highlightOnCopy.run",
     async () => {
@@ -15,17 +15,20 @@ export function activate(context: vscode.ExtensionContext) {
       const selection = editor.selection;
       const text = editor.document.getText(selection);
 
-      // Read configuration values
-      const config = vscode.workspace.getConfiguration("highlight-on-copy");
-      const backgroundColor = config.get("backgroundColor", DEFAULT_COLOR);
-      const timeout = config.get("timeout", DEFAULT_TIMEOUT);
+      const config = vscode.workspace.getConfiguration();
+
+      // Retrieve settings with automatic fallback to defaults defined in package.json
+      const foregroundColor = config.get("foregroundColor");
+      const backgroundColor = config.get("backgroundColor"); // Default is used if not set by user
+      const timeout = config.get("timeout"); // Default is used if not set by user
 
       // Copy to clipboard
       await vscode.env.clipboard.writeText(text);
 
       // Apply decoration
       const decorationType = vscode.window.createTextEditorDecorationType({
-        backgroundColor,
+        backgroundColor: backgroundColor as string,
+        color: foregroundColor || undefined,
       });
 
       editor.setDecorations(decorationType, [selection]);
@@ -33,11 +36,13 @@ export function activate(context: vscode.ExtensionContext) {
       // Remove decoration after specified timeout
       setTimeout(() => {
         decorationType.dispose();
-      }, timeout);
+      }, timeout as number);
     }
   );
 
   context.subscriptions.push(disposable);
 }
 
-export function deactivate() {}
+export function deactivate() {
+  vscode.commands.executeCommand("setContext", "highlightOnCopy.init", false);
+}
