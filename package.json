@@ -1,21 +1,25 @@
 {
   "name": "highlight-on-copy",
-  "displayName": "highlight-on-copy",
+  "displayName": "Highlight on Copy",
   "description": "Briefly flash and highlight selected copied text",
+  "publisher": "Marc Güell Segarra",
   "version": "0.0.1",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.88.0"
   },
   "categories": [
-    "Other"
+    "Keymaps",
+    "Other",
+    "Visualization"
   ],
   "repository": {
-    "url": "https://github.com/hugolalmeida/vscode-highlight-on-copy"
+    "url": "https://github.com/mguellsegarra/highlight-on-copy"
   },
   "author": {
     "name": "Marc Güell Segarra",
-    "url": "https://github.com/hugolalmeida"
-
+    "url": "https://ondori.dev",
+    "email": "marc@ondori.dev"
   },
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -25,25 +29,35 @@
         "command": "highlightOnCopy.run",
         "title": "Copy and highlight selected text"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "backgroundColor": {
+          "type": "string",
+          "default": "rgba(230, 97, 89, 0.7)",
+          "description": "Background color for highlighting"
+        },
+        "timeout": {
+          "type": "number",
+          "default": 500,
+          "description": "Timeout duration in milliseconds"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "lint": "eslint src --ext ts"
   },
   "devDependencies": {
     "@types/vscode": "^1.88.0",
-    "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
-    "typescript": "^5.4.5",
-    "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9"
+    "typescript": "^5.4.5"
   }
 }
