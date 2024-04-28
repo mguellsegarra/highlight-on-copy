@@ -21,7 +21,7 @@ This is a **VSCode extension** inspired by the [Vim](https://www.vim.org/) plugi
 
 Add this command to your keymappings:
 
-```json
+```jsonc
   {
     "key": "cmd+c", // or Ctrl-C or other keymap that you find useful
     "command": "highlightOnCopy.run",
@@ -31,7 +31,7 @@ Add this command to your keymappings:
 
 You can customize the color and the duration of the highlight with these entries in your `settings.json`:
 
-```json
+```jsonc
 {
     "highlightOnCopy.backgroundColor": "rgba(230, 97, 89, 0.7)",
     // by default the foreground text color it's undefined, meaning the actual color won't be modified
