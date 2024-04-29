@@ -64,7 +64,9 @@
     "keybindings": [
       {
         "command": "highlightOnCopy.run",
-        "key": "ctrl+c"
+        "key": "ctrl+c",
+        "mac": "cmd+c",
+        "when": "editorTextFocus"
       }
     ]
   },
