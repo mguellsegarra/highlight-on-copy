@@ -32,11 +32,16 @@ You have to add a custom keybind for this extension to work in your `keybindings
 
 Also, you can customize the color and the duration of the highlight with these entries in your `settings.json`:
 
+1. Open **Command Palette**.
+2. On Windows and Linux, press `Ctrl + Shift + P`. On macOS, press `Cmd + Shift + P`.
+3. Search for `Open User Settings (JSON)` and select it from the list. This command takes you directly to the `settings.json` file where all your settings are defined.
+4. You can now add your custom settings for the extension. Add the following and adjust them to your liking.:
+
 ```jsonc
 {
     "highlightOnCopy.backgroundColor": "rgba(230, 97, 89, 0.7)",
     // by default the foreground text color it's undefined, meaning the actual color won't be modified
-    "highlightOnCopy.foregroundColor": undefined, // set it to #fff if you want to
+    "highlightOnCopy.foregroundColor": "#fff",
     "highlightOnCopy.timeout": 200
 }
 ```
