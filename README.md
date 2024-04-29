@@ -3,7 +3,7 @@
 </strong></p>
 <p align=center>
 <a href="https://marketplace.visualstudio.com/items?itemName=mguellsegarra.highlight-on-copy"><img src="https://img.shields.io/visual-studio-marketplace/v/mguellsegarra.highlight-on-copy?color=%234c1&label=Visual%20Studio%20Marketplace"></a>
-</p> -->
+</p>
 
 <p align=center>
 <img src="./images/demo.gif" />
