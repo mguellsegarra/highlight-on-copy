@@ -1,7 +1,7 @@
 {
   "name": "highlight-on-copy",
   "displayName": "Highlight on Copy",
-  "publisher": "Marc Güell Segarra",
+  "publisher": "mguellsegarra",
   "description": "Briefly flash and highlight selected copied text",
   "version": "1.0.0",
   "icon": "icon.png",
@@ -26,6 +26,9 @@
   "author": {
     "name": "Marc Güell Segarra",
     "url": "https://ondori.dev"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/mguellsegarra"
   },
   "license": "MIT",
   "activationEvents": [
