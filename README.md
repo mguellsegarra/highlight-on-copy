@@ -32,7 +32,7 @@ You can customize the color and the duration of the highlight with these entries
     "highlightOnCopy.backgroundColor": "rgba(230, 97, 89, 0.7)",
     // by default the foreground text color it's undefined, meaning the actual color won't be modified
     "highlightOnCopy.foregroundColor": undefined, // set it to #fff if you want to
-    "highlightOnCopy.timeout": 500
+    "highlightOnCopy.timeout": 200
 }
 ```
 

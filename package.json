@@ -56,7 +56,7 @@
         },
         "highlightOnCopy.timeout": {
           "type": "number",
-          "default": 500,
+          "default": 200,
           "description": "Timeout duration in milliseconds"
         }
       }
