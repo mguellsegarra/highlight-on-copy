@@ -15,7 +15,12 @@ This is a **VSCode extension** inspired by the [Vim](https://www.vim.org/) plugi
 
 ## Configuration 🛠️
 
-Add this command to your keymappings:
+You have to add a custom keybind for this extension to work in your `keybindings.json` file:
+
+1. Open **Command Palette**.
+2. On Windows and Linux, press `Ctrl + Shift + P`. On macOS, press `Cmd + Shift + P`.
+3. Search for `Open Keyboard Shortcuts (JSON)` and select it from the list. This command takes you directly to the `keybindings.json` file where all keyboard shortcuts customizations will be defined.
+4. You can now add your keybinding for this extension to work. If you're adding the customization for the first time, you might see an empty array `[]`. Add the following:
 
 ```jsonc
   {
@@ -25,7 +30,7 @@ Add this command to your keymappings:
   }
 ```
 
-You can customize the color and the duration of the highlight with these entries in your `settings.json`:
+Also, you can customize the color and the duration of the highlight with these entries in your `settings.json`:
 
 ```jsonc
 {
