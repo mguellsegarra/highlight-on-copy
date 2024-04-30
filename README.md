@@ -48,7 +48,7 @@ Also, you can customize the color and the duration of the highlight with these e
 
 ##  License 📄
 
-This project is licensed under the **MIT License** - see the LICENSE file for details.
+This project is licensed under the [**MIT License**](https://github.com/mguellsegarra/highlight-on-copy/blob/main/LICENSE).
 
 ##  Author 🙋🏽‍♂️
 
