@@ -49,9 +49,20 @@ export function getSelections(
   editor: vscode.TextEditor
 ): readonly vscode.Selection[] | vscode.Range[] {
   let lastSelectionLine = -1;
-  const expandedSelections = editor.selections.map((selection) => {
+
+  // We need to sort the selections for the case where an additional cursor is inserted
+  // before the 'active' cursor of another selection on the same line.
+  const sortedSelections = [...editor.selections].sort((a, b) => {
+    if (a.active.line === b.active.line) {
+      return a.active.character - b.active.character;
+    }
+    return a.active.line - b.active.line;
+  });
+
+  const expandedSelections = sortedSelections.map((selection) => {
     // With multiple cursors on a single line, any empty selection is ignored (after the first selection)
     if (selection.isEmpty && lastSelectionLine === selection.active.line) {
+      // We don't worry about setting lastSelectionLine here as this branch is only for the matching line
       return null;
     }
 
