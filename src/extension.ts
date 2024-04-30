@@ -42,6 +42,8 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
+  vscode.commands.executeCommand("setContext", "highlightOnCopy.init", false);
+}
 
 function getSelections(editor: vscode.TextEditor): readonly vscode.Selection[] | vscode.Range[] {
   const selections = editor.selections;
