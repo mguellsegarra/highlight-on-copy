@@ -60,7 +60,15 @@
           "description": "Timeout duration in milliseconds"
         }
       }
-    }
+    },
+    "keybindings": [
+      {
+        "command": "highlightOnCopy.run",
+        "key": "ctrl+c",
+        "mac": "cmd+c",
+        "when": "editorTextFocus"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
