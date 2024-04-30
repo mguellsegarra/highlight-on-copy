@@ -1,6 +1,7 @@
 name: Run Tests on PR
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -8,7 +9,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
