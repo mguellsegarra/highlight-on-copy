@@ -15,20 +15,13 @@ This is a **VSCode extension** inspired by the [Vim](https://www.vim.org/) plugi
 
 ## Configuration 🛠️
 
-You have to add a custom keybind for this extension to work in your `keybindings.json` file:
+The extension works out of the box when triggering your default copy to clipboard shortcut (`Ctrl + C`, `Cmd + C`).
+
+If you wish to change the default keybinding, you can do it in your `Keyboard Shortcuts`:
 
 1. Open **Command Palette**.
 2. On Windows and Linux, press `Ctrl + Shift + P`. On macOS, press `Cmd + Shift + P`.
-3. Search for `Open Keyboard Shortcuts (JSON)` and select it from the list. This command takes you directly to the `keybindings.json` file where all keyboard shortcuts customizations will be defined.
-4. You can now add your keybinding for this extension to work. If you're adding the customization for the first time, you might see an empty array `[]`. Add the following:
-
-```jsonc
-  {
-    "key": "cmd+c", // or Ctrl-C or other keymap that you find useful
-    "command": "highlightOnCopy.run",
-    "when": "editorTextFocus && highlightOnCopy.init"
-  }
-```
+3. Search for `Open Keyboard Shortcuts` and search for the `highlightOnCopy.run" command and remap the shortcut to your needs.
 
 Also, you can customize the color and the duration of the highlight with these entries in your `settings.json`:
 
@@ -53,6 +46,12 @@ This project is licensed under the [**MIT License**](https://github.com/mguellse
 ##  Author 🙋🏽‍♂️
 
 I'm Marc Güell Segarra, a freelance software developer at [Ondori.dev](https://ondori.dev).
+
+## Contributors
+
+A big shout out to:
+
+- David Kincaid ([@DaelonSuzuka](https://github.com/DaelonSuzuka))
 
 ##  Buy Me a Coffee ☕
 

@@ -12,7 +12,6 @@ export function activate(context: vscode.ExtensionContext) {
         return; // No open text editor
       }
 
-      const selection = editor.selection;
       const config = vscode.workspace.getConfiguration("highlightOnCopy");
 
       // Retrieve settings with automatic fallback to defaults defined in package.json
@@ -29,7 +28,8 @@ export function activate(context: vscode.ExtensionContext) {
         color: foregroundColor || undefined,
       });
 
-      editor.setDecorations(decorationType, [selection]);
+      // Apply decoration
+      editor.setDecorations(decorationType, [...editor.selections]);
 
       // Remove decoration after specified timeout
       setTimeout(() => {
