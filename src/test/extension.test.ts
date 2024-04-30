@@ -37,17 +37,51 @@ suite("Extension Test Suite", () => {
       });
     });
 
-    console.log({ clipboardContent });
     assert.strictEqual(
       clipboardContent,
       document.getText(),
       "The clipboard content should match the text in the editor."
     );
+  });
 
-    if (vscode.window.activeTextEditor) {
-      await vscode.commands.executeCommand(
-        "workbench.action.closeActiveEditor"
-      );
-    }
+  test("Multi-cursor copy command effectively updates the clipboard", async () => {
+    // Create a new text document with multiple lines
+    const document = await vscode.workspace.openTextDocument({
+      content: "First line to copy\nSecond line to copy\nThird line to copy",
+    });
+    const editor = await vscode.window.showTextDocument(document);
+
+    // Set multi-cursor selection
+    // Here, we're simulating selections on the first and third line
+    const firstLine = editor.document.lineAt(0); // First line
+    const thirdLine = editor.document.lineAt(2); // Third line
+
+    // Create two Selection objects, one for each line we want to select with the cursor
+    editor.selections = [
+      new vscode.Selection(firstLine.range.start, firstLine.range.end),
+      new vscode.Selection(thirdLine.range.start, thirdLine.range.end),
+    ];
+
+    // Execute your command to copy text with multi-cursor
+    await vscode.commands.executeCommand("highlightOnCopy.run");
+
+    // Check clipboard content to verify if the multi-cursor copy worked
+    const expectedClipboardContent = firstLine.text + "\n" + thirdLine.text; // Assuming your extension joins lines with a newline character
+
+    const clipboardContent = await new Promise((resolve, reject) => {
+      paste((error, content) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(content);
+        }
+      });
+    });
+
+    assert.strictEqual(
+      clipboardContent,
+      expectedClipboardContent,
+      "The clipboard content should match the combined text of the selected lines."
+    );
   });
 });
