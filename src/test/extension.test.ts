@@ -1,6 +1,5 @@
 import * as assert from "assert";
 import * as vscode from "vscode";
-import { paste } from "copy-paste";
 
 suite("Extension Test Suite", () => {
   vscode.window.showInformationMessage("Start all tests.");
@@ -27,15 +26,7 @@ suite("Extension Test Suite", () => {
     await vscode.commands.executeCommand("highlightOnCopy.run");
 
     // Get the paste content
-    const clipboardContent = await new Promise((resolve, reject) => {
-      paste((error, content) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(content);
-        }
-      });
-    });
+    const clipboardContent = await vscode.env.clipboard.readText();
 
     assert.strictEqual(
       clipboardContent,
@@ -68,15 +59,7 @@ suite("Extension Test Suite", () => {
     // Check clipboard content to verify if the multi-cursor copy worked
     const expectedClipboardContent = firstLine.text + "\n" + thirdLine.text; // Assuming your extension joins lines with a newline character
 
-    const clipboardContent = await new Promise((resolve, reject) => {
-      paste((error, content) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(content);
-        }
-      });
-    });
+    const clipboardContent = await vscode.env.clipboard.readText();
 
     assert.strictEqual(
       clipboardContent,
