@@ -13,8 +13,6 @@ export function activate(context: vscode.ExtensionContext) {
       }
 
       const selection = editor.selection;
-      const text = editor.document.getText(selection);
-
       const config = vscode.workspace.getConfiguration("highlightOnCopy");
 
       // Retrieve settings with automatic fallback to defaults defined in package.json
@@ -23,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
       const timeout = config.get("timeout"); // Default is used if not set by user
 
       // Copy to clipboard
-      await vscode.env.clipboard.writeText(text);
+      await vscode.commands.executeCommand("editor.action.clipboardCopyAction");
 
       // Apply decoration
       const decorationType = vscode.window.createTextEditorDecorationType({
