@@ -7,6 +7,9 @@ export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     "highlightOnCopy.run",
     async () => {
+      // Copy to clipboard
+      await vscode.commands.executeCommand("editor.action.clipboardCopyAction");
+
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
         return; // No open text editor
@@ -18,9 +21,6 @@ export function activate(context: vscode.ExtensionContext) {
       const foregroundColor = config.get("foregroundColor");
       const backgroundColor = config.get("backgroundColor"); // Default is used if not set by user
       const timeout = config.get("timeout"); // Default is used if not set by user
-
-      // Copy to clipboard
-      await vscode.commands.executeCommand("editor.action.clipboardCopyAction");
 
       // Apply decoration
       const decorationType = vscode.window.createTextEditorDecorationType({
