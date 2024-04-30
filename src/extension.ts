@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
       });
 
       // Apply decoration
-    editor.setDecorations(decorationType, getSelections(editor));
+      editor.setDecorations(decorationType, getSelections(editor));
 
       // Remove decoration after specified timeout
       setTimeout(() => {
@@ -45,7 +45,9 @@ export function deactivate() {
   vscode.commands.executeCommand("setContext", "highlightOnCopy.init", false);
 }
 
-function getSelections(editor: vscode.TextEditor): readonly vscode.Selection[] | vscode.Range[] {
+function getSelections(
+  editor: vscode.TextEditor
+): readonly vscode.Selection[] | vscode.Range[] {
   const selections = editor.selections;
   if (selections.length === 1 && selections[0].isEmpty) {
     return [editor.document.lineAt(selections[0].anchor).range];

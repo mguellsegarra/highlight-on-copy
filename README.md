@@ -47,12 +47,6 @@ This project is licensed under the [**MIT License**](https://github.com/mguellse
 
 I'm Marc Güell Segarra, a freelance software developer at [Ondori.dev](https://ondori.dev).
 
-## Contributors
-
-A big shout out to:
-
-- David Kincaid ([@DaelonSuzuka](https://github.com/DaelonSuzuka))
-
 ##  Buy Me a Coffee ☕
 
 If you found this extension useful, consider **[buying me a coffee](https://buymeacoffee.com/mguellsegarra)!**

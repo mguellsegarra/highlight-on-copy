@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2] - 2024-04-30
+
+### Changed
+
+- fix: highlight entire line when used on empty selection. Thanks to [@rcoopr](https://github.com/rcoopr) for the contribution.
+
 ## [1.1.1] - 2024-04-30
 
 ### Changed
