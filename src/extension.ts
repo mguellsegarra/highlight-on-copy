@@ -19,7 +19,10 @@ export function activate(context: vscode.ExtensionContext) {
       const backgroundColor = config.get("backgroundColor"); // Default is used if not set by user
       const timeout = config.get("timeout"); // Default is used if not set by user
 
-      // Create decoration
+      // Copy to clipboard
+      await vscode.env.clipboard.writeText(text);
+
+      // Apply decoration
       const decorationType = vscode.window.createTextEditorDecorationType({
         backgroundColor: backgroundColor as string,
         color: foregroundColor || undefined,
