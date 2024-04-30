@@ -35,6 +35,31 @@ suite("Extension Test Suite", () => {
     );
   });
 
+  test("Copy and highlight command effectively updates the clipboard for an empty selection", async () => {
+    const document = await vscode.workspace.openTextDocument({
+      content: "Test text to be copied",
+    });
+
+    // Show the text document in the editor
+    const editor = await vscode.window.showTextDocument(document);
+
+    // Select the full text in the editor
+    const firstLine = editor.document.lineAt(0);
+    editor.selection = new vscode.Selection(firstLine.range.start, firstLine.range.end);
+
+    // Execute the command
+    await vscode.commands.executeCommand("highlightOnCopy.run");
+
+    // Get the paste content
+    const clipboardContent = await vscode.env.clipboard.readText();
+
+    assert.strictEqual(
+      clipboardContent,
+      document.getText(),
+      "The clipboard content should match the text in the editor."
+    );
+  });
+
   test("Multi-cursor copy command effectively updates the clipboard", async () => {
     // Create a new text document with multiple lines
     const document = await vscode.workspace.openTextDocument({
