@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1] - 2024-04-30
+
+### Changed
+
+- Changed the keybind `when` clause
+- Ensure clipboard is always triggered
+
 ## [1.1.0] - 2024-04-30
 
 ### Added
