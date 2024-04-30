@@ -3,7 +3,7 @@
   "displayName": "Highlight on Copy",
   "publisher": "mguellsegarra",
   "description": "Briefly flash and highlight selected copied text",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.88.0"
