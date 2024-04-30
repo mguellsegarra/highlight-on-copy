@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Install XVFB
-        run: sudo apt-get install -y xvfb
+        run: sudo apt-get install -y xvfb xclip
 
       - name: Run VSCode Extension Tests
         run: xvfb-run --auto-servernum npm test
