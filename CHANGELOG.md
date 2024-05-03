@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.4] - 2024-05-03
+
+### Changed
+
+- fix: Adjust minimal vscode version
+
 ## [1.1.3] - 2024-05-01
 
 ### Changed
