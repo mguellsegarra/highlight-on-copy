@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.5] - 2025-02-11
+
+### Changed
+
+- fix: Add extensionKind ui in package.json [#12](https://github.com/mguellsegarra/highlight-on-copy/issues/12) - Thanks to [@RichardLuo0](https://github.com/RichardLuo0) for the contribution.
+
 ## [1.1.4] - 2024-05-03
 
 ### Changed

@@ -3,7 +3,7 @@
   "displayName": "Highlight on Copy",
   "publisher": "mguellsegarra",
   "description": "Briefly flash and highlight selected copied text",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"
@@ -19,6 +19,9 @@
     "Keymaps",
     "Other",
     "Visualization"
+  ],
+  "extensionKind": [
+    "ui"
   ],
   "repository": {
     "url": "https://github.com/mguellsegarra/highlight-on-copy"
