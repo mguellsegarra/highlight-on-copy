@@ -23,6 +23,11 @@
   "extensionKind": [
     "ui"
   ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
   "repository": {
     "url": "https://github.com/mguellsegarra/highlight-on-copy"
   },
