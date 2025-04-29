@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.6] - 2025-04-29
+
+### Changed
+
+- fix: support untrustedWorkspaces [#12](https://github.com/mguellsegarra/highlight-on-copy/issues/13) - Thanks to [@RichardLuo0](https://github.com/RichardLuo0) for the contribution.
+
 ## [1.1.5] - 2025-02-11
 
 ### Changed
